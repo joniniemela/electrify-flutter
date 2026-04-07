@@ -31,6 +31,29 @@
 
   <title>electrify_flutter</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Google Maps JavaScript API loader.
+       env.js (gitignored) sets window.MAPS_API_KEY; the inline loader below
+       injects the Maps API <script> tag before flutter_bootstrap.js starts,
+       so google.maps.* is available by the time the GoogleMap widget mounts. -->
+  <script src="env.js"></script>
+  <script>
+    (function () {
+      var key = window.MAPS_API_KEY;
+      if (key && key !== "YOUR_WEB_KEY_HERE") {
+        var s = document.createElement("script");
+        s.src =
+          "https://maps.googleapis.com/maps/api/js?key=" +
+          encodeURIComponent(key);
+        s.async = false;
+        document.head.appendChild(s);
+      } else {
+        console.warn(
+          "MAPS_API_KEY missing in web/env.js — Google Maps will not render on web."
+        );
+      }
+    })();
+  </script>
 </head>
 <body>
   <!--
