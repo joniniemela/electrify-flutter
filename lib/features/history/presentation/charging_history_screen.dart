@@ -12,10 +12,10 @@ class ChargingHistoryScreen extends ConsumerWidget {
 
   // TODO(logic): replace with provider-driven session list
   static const _sessions = [
-    _Session(id: '1', date: '12.3.2026', location: 'Mannerheimintie 12', cost: '3,86 €'),
-    _Session(id: '2', date: '08.3.2026', location: 'Kampin parkkihalli', cost: '5,12 €'),
-    _Session(id: '3', date: '01.3.2026', location: 'Kalasatama', cost: '7,94 €'),
-    _Session(id: '4', date: '24.2.2026', location: 'Hakaniemi P-City', cost: '2,40 €'),
+    _Session(id: '1', date: '12.3.2026', location: 'LUT-yliopiston pääparkki', cost: '3,86 €'),
+    _Session(id: '2', date: '08.3.2026', location: 'Tiedepuiston latauspiste', cost: '5,12 €'),
+    _Session(id: '3', date: '01.3.2026', location: 'Sammontorin Citymarket', cost: '7,94 €'),
+    _Session(id: '4', date: '24.2.2026', location: 'Skinnarilan urheilukenttä', cost: '2,40 €'),
   ];
 
   @override

@@ -46,3 +46,8 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+
+# Local secrets (Google Maps API keys, etc.) — DO NOT COMMIT
+android/local.properties
+ios/Flutter/Secrets.xcconfig
+web/env.js

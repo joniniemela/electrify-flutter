@@ -39,7 +39,7 @@ class SessionDetailsScreen extends ConsumerWidget {
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   const SizedBox(height: 8),
-                  const Text('Mannerheimintie 12, Helsinki'),
+                  const Text('Skinnarilankatu 34, Lappeenranta'),
                   const SizedBox(height: 4),
                   const Text('12.3.2026 · 14:32 – 15:46'),
                 ],

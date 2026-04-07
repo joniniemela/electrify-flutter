@@ -12,10 +12,10 @@ class MapSearchScreen extends ConsumerWidget {
 
   // TODO(logic): provider-driven search results
   static const _results = [
-    'Mannerheimintie 12',
-    'Kampin parkkihalli',
-    'Kalasatama K-Citymarket',
-    'Hakaniemi P-City',
+    'Skinnarilankatu 34 — LUT-yliopisto',
+    'Laserkatu 6 — Tiedepuisto',
+    'Sammontorin Citymarket',
+    'Punkkerikatu 1 — Skinnarilan urheilukenttä',
   ];
 
   @override
