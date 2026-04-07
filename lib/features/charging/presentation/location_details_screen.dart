@@ -42,7 +42,7 @@ class LocationDetailsScreen extends ConsumerWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    'Mannerheimintie 12, 00100 Helsinki',
+                    'Skinnarilankatu 34, 53850 Lappeenranta',
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                   const SizedBox(height: 16),

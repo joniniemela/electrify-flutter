@@ -22,9 +22,9 @@ class MapScreen extends ConsumerStatefulWidget {
 }
 
 class _MapScreenState extends ConsumerState<MapScreen> {
-  static const CameraPosition _helsinkiCenter = CameraPosition(
-    target: LatLng(60.1699, 24.9384),
-    zoom: 12,
+  static const CameraPosition _lutCampusCenter = CameraPosition(
+    target: LatLng(61.0656, 28.0930),
+    zoom: 15,
   );
 
   final Completer<GoogleMapController> _controller =
@@ -42,7 +42,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       ),
       body: Builder(
         builder: (context) => GoogleMap(
-          initialCameraPosition: _helsinkiCenter,
+          initialCameraPosition: _lutCampusCenter,
           markers: _buildMarkers(context),
           onMapCreated: (controller) {
             if (!_controller.isCompleted) {
@@ -142,42 +142,42 @@ class _Station {
 const List<_Station> _sampleStations = [
   _Station(
     id: '01',
-    name: 'Asema Kamppi',
-    address: 'Mannerheimintie 12, 00100 Helsinki',
+    name: 'LUT-yliopiston pääparkki',
+    address: 'Skinnarilankatu 34, 53850 Lappeenranta',
     power: '50 kW',
     pricePerKwh: '0,32',
-    position: LatLng(60.1689, 24.9316),
+    position: LatLng(61.0658, 28.0929),
   ),
   _Station(
     id: '02',
-    name: 'Asema Kallio',
-    address: 'Hämeentie 15, 00530 Helsinki',
+    name: 'Tiedepuiston latauspiste',
+    address: 'Laserkatu 6, 53850 Lappeenranta',
     power: '150 kW',
     pricePerKwh: '0,38',
-    position: LatLng(60.1840, 24.9510),
+    position: LatLng(61.0672, 28.0892),
   ),
   _Station(
     id: '03',
-    name: 'Asema Pasila',
-    address: 'Ratapihantie 13, 00520 Helsinki',
-    power: '50 kW',
-    pricePerKwh: '0,30',
-    position: LatLng(60.1986, 24.9337),
+    name: 'LAB Skinnarila',
+    address: 'Yliopistonkatu 36, 53850 Lappeenranta',
+    power: '22 kW',
+    pricePerKwh: '0,28',
+    position: LatLng(61.0648, 28.0951),
   ),
   _Station(
     id: '04',
-    name: 'Asema Ruoholahti',
-    address: 'Itämerenkatu 1, 00180 Helsinki',
-    power: '22 kW',
-    pricePerKwh: '0,28',
-    position: LatLng(60.1640, 24.9151),
+    name: 'Sammontorin Citymarket',
+    address: 'Sammontori 2, 53850 Lappeenranta',
+    power: '75 kW',
+    pricePerKwh: '0,34',
+    position: LatLng(61.0628, 28.1042),
   ),
   _Station(
     id: '05',
-    name: 'Asema Hakaniemi',
-    address: 'Hakaniemen tori 1, 00530 Helsinki',
-    power: '75 kW',
-    pricePerKwh: '0,34',
-    position: LatLng(60.1781, 24.9505),
+    name: 'Skinnarilan urheilukenttä',
+    address: 'Punkkerikatu 1, 53850 Lappeenranta',
+    power: '50 kW',
+    pricePerKwh: '0,30',
+    position: LatLng(61.0683, 28.0975),
   ),
 ];

@@ -12,7 +12,7 @@ class NotificationsScreen extends ConsumerWidget {
   // TODO(logic): provider-driven notifications stream
   static const _notifications = [
     _N(icon: Icons.payment, title: 'Maksu veloitettu', body: '12.3.2026 · 3,86 €'),
-    _N(icon: Icons.event_available, title: 'Varaus vahvistettu', body: 'Mannerheimintie 12, klo 14:00'),
+    _N(icon: Icons.event_available, title: 'Varaus vahvistettu', body: 'Skinnarilankatu 34, klo 14:00'),
     _N(icon: Icons.local_offer, title: 'Tarjous', body: '20% alennus viikonloppuna'),
     _N(icon: Icons.info_outline, title: 'Sovellus päivitetty', body: 'Uusi versio 1.4.0 saatavilla'),
   ];
