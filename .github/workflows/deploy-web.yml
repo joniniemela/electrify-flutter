@@ -1,0 +1,67 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: Install FVM
+        run: dart pub global activate fvm
+
+      - name: Install Flutter via FVM
+        run: |
+          fvm install
+          fvm flutter --version
+
+      - name: Install dependencies
+        run: fvm flutter pub get
+
+      - name: Create web/env.js
+        env:
+          MAPS_API_KEY: ${{ secrets.MAPS_API_KEY }}
+        run: |
+          if [ -n "$MAPS_API_KEY" ]; then
+            printf 'window.MAPS_API_KEY = "%s";\n' "$MAPS_API_KEY" > web/env.js
+          else
+            cp web/env.js.example web/env.js
+          fi
+
+      - name: Build for web
+        run: fvm flutter build web --release --base-href /
+
+      - name: Add CNAME
+        run: cp CNAME build/web/CNAME
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
